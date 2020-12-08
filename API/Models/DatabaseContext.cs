@@ -7,7 +7,6 @@ namespace API.Models
         public DatabaseContext(DbContextOptions<DatabaseContext> options)
             : base(options)
         {
-            option
         }
 
         public DbSet<CvSection> CvSections { get; set; }
