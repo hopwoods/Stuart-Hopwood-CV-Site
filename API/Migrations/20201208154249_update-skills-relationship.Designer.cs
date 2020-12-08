@@ -3,14 +3,16 @@ using API.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace API.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20201208154249_update-skills-relationship")]
+    partial class updateskillsrelationship
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -55,11 +57,13 @@ namespace API.Migrations
 
             modelBuilder.Entity("API.Models.SkillExample", b =>
                 {
-                    b.HasOne("API.Models.Skill", null)
+                    b.HasOne("API.Models.Skill", "Skill")
                         .WithMany("SkillExamples")
                         .HasForeignKey("SkillId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Skill");
                 });
 
             modelBuilder.Entity("API.Models.Skill", b =>

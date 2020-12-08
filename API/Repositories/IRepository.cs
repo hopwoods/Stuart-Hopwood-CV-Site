@@ -11,16 +11,16 @@ namespace API.Repositories
     {
         Task Delete(TEntity entityToDelete);
 
-        Task Delete(object id);
+        Task Delete(int id);
 
-        IEnumerable<TEntity> Get(Expression<Func<TEntity, bool>> filter = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, string includeProperties = "");
+        IEnumerable<TEntity> Get(Expression<Func<TEntity, bool>> filter = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null);
 
-        Task<TEntity> GetById(object id);
+        TEntity GetById(int id);
 
         IEnumerable<TEntity> GetWithRawSql(string query, params object[] parameters);
 
-        Task Insert(TEntity section);
+        Task Insert(TEntity entity);
 
-        Task Update(TEntity sectionToUpdate);
+        Task Update(TEntity entityToUpdate);
     }
 }

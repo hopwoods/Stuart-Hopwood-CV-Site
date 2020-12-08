@@ -16,7 +16,7 @@ namespace API.Extensions
         /// <returns></returns>
         public static IServiceCollection AddApiServices(this IServiceCollection serviceCollection)
         {
-            serviceCollection.AddTransient<ICvSectionRepository<CvSection>, CvSectionRepository<CvSection>>();
+            serviceCollection.AddTransient<ISkillRepository<Skill>, SkillRepository<Skill>>();
 
             return serviceCollection;
         }

@@ -9,9 +9,18 @@ namespace API.Models
         {
         }
 
-        public DbSet<CvSection> CvSections { get; set; }
         public DbSet<Skill> Skills { get; set; }
         public DbSet<SkillExample> SkillExamples { get; set; }
+
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Skill>()
+                .HasMany(s => s.SkillExamples)
+                .WithOne()
+                .HasForeignKey(e => e.SkillId)
+                .OnDelete(DeleteBehavior.Cascade);
+        }
 
     }
 }
