@@ -46,15 +46,17 @@ namespace API.Repositories
                 query = query.Where(filter);
             }
 
-            if (includeProperties != null)
+            if (includeProperties == null)
             {
-                foreach (var includeProperty in includeProperties.Split
-                    (new char[] {','}, StringSplitOptions.RemoveEmptyEntries))
-                {
-                    query = query.Include(includeProperty);
-                }
+                return orderBy != null
+                    ? orderBy(query).ToList()
+                    : query.ToList();
             }
 
+            foreach (var includeProperty in includeProperties.Split(new[] {','}, StringSplitOptions.RemoveEmptyEntries))
+            {
+                query = query.Include(includeProperty);
+            }
 
             return orderBy != null 
                 ? orderBy(query).ToList() 
@@ -70,7 +72,7 @@ namespace API.Repositories
 
         public IEnumerable<T> GetWithRawSql(string query, params object[] parameters)
         {
-            throw new NotImplementedException();
+            return _dbSet.FromSqlRaw(query, parameters).ToList();
         }
 
         public async Task Insert(T section)
