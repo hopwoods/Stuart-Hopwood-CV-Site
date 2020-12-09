@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 
 namespace API.Controllers
 {
@@ -12,10 +13,13 @@ namespace API.Controllers
     public class SkillsController : ControllerBase
     {
         private readonly ISkillRepository<Skill> _repository;
+        private readonly ILogger<SkillsController> _logger;
+        
 
-        public SkillsController( ISkillRepository<Skill> repository)
+        public SkillsController( ISkillRepository<Skill> repository, ILogger<SkillsController> logger)
         {
             _repository = repository;
+            _logger = logger;
         }
 
         // GET: api/Skills
