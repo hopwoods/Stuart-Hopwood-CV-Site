@@ -5,11 +5,13 @@ VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "API\API.csproj", "{10B3BF00-7218-4195-B820-AF6B393DA8D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{2ADBB87E-BCF8-4751-A3C7-83B0366BD8DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Application\Application.csproj", "{2ADBB87E-BCF8-4751-A3C7-83B0366BD8DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{26E49ED8-239D-4A1A-B086-7611FB2B8AD8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", "{26E49ED8-239D-4A1A-B086-7611FB2B8AD8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{BFFA880F-0D23-46A4-B9E9-1B12CD015DE3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{BFFA880F-0D23-46A4-B9E9-1B12CD015DE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI", "UI\UI.csproj", "{755665DE-D062-4E4B-BE6F-C2DC8325A30A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{BFFA880F-0D23-46A4-B9E9-1B12CD015DE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BFFA880F-0D23-46A4-B9E9-1B12CD015DE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BFFA880F-0D23-46A4-B9E9-1B12CD015DE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{755665DE-D062-4E4B-BE6F-C2DC8325A30A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{755665DE-D062-4E4B-BE6F-C2DC8325A30A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{755665DE-D062-4E4B-BE6F-C2DC8325A30A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{755665DE-D062-4E4B-BE6F-C2DC8325A30A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
