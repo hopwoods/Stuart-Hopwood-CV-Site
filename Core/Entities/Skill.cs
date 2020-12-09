@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace API.Models
+namespace Core.Entities
 {
     public class Skill
     {

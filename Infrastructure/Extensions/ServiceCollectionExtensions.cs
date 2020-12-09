@@ -1,8 +1,9 @@
-﻿using API.Models;
-using API.Repositories;
+﻿using Application.Interfaces;
+using Core.Entities;
+using Infrastructure.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace API.Extensions
+namespace Infrastructure.Extensions
 {
     /// <summary>
     /// 

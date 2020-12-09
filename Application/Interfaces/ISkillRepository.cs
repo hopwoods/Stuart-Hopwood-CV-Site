@@ -1,6 +1,6 @@
-﻿using API.Models;
+﻿using Core.Entities;
 
-namespace API.Repositories
+namespace Application.Interfaces
 {
     public interface ISkillRepository<TEntity> : IRepository<TEntity> where TEntity : Skill
     {

@@ -1,12 +1,9 @@
-﻿using System;
+﻿using Application.Interfaces;
+using Core.Entities;
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using API.Models;
-using API.Repositories;
 
 namespace API.Controllers
 {
@@ -14,12 +11,10 @@ namespace API.Controllers
     [ApiController]
     public class SkillsController : ControllerBase
     {
-        private readonly DatabaseContext _context;
         private readonly ISkillRepository<Skill> _repository;
 
-        public SkillsController(DatabaseContext context, ISkillRepository<Skill> repository)
+        public SkillsController( ISkillRepository<Skill> repository)
         {
-            _context = context;
             _repository = repository;
         }
 
@@ -47,7 +42,7 @@ namespace API.Controllers
         // PUT: api/Skills/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutSkill(int id, Skill skill)
+        public IActionResult PutSkill(int id, Skill skill)
         {
             if (id != skill.Id)
             {
@@ -59,20 +54,7 @@ namespace API.Controllers
                 return NotFound();
             }
 
-            try
-            {
-                await _repository.Update(skill);
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!SkillExists(id))
-                {
-                    return NotFound();
-                }
-
-                throw;
-            }
-
+            _repository.Update(skill);
             return NoContent();
         }
 
@@ -87,7 +69,7 @@ namespace API.Controllers
 
         // DELETE: api/Skills/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteSkill(int id)
+        public IActionResult DeleteSkill(int id)
         {
             var skill = _repository.GetById(id);
             if (skill == null)
@@ -95,8 +77,7 @@ namespace API.Controllers
                 return NotFound();
             }
 
-            await _repository.Delete(skill);
-            await _context.SaveChangesAsync();
+            _repository.Delete(skill);
 
             return NoContent();
         }
