@@ -9,9 +9,9 @@ namespace Application.Interfaces
 {
     public interface IRepository<TEntity> where TEntity : class
     {
-        void Delete(TEntity entityToDelete);
+        Task Delete(TEntity entityToDelete);
 
-        void Delete(int id);
+        Task Delete(int id);
 
         IEnumerable<TEntity> Get(Expression<Func<TEntity, bool>> filter = null, Func<IMartenQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null);
 
@@ -19,6 +19,6 @@ namespace Application.Interfaces
 
         Task Insert(TEntity entity);
 
-        void Update(TEntity entityToUpdate);
+        Task Update(TEntity entityToUpdate);
     }
 }

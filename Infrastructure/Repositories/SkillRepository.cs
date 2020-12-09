@@ -19,14 +19,24 @@ namespace Infrastructure.Repositories
             _documentStore = documentStore;
         }
 
-        public void Delete(TEntity entityToDelete)
+        public async Task Delete(TEntity entityToDelete)
         {
-            throw new NotImplementedException();
+            using var session = _documentStore.OpenSession();
+            session.Delete(entityToDelete);
+            await session.SaveChangesAsync();
+            session.Dispose();
         }
 
-        public void Delete(int id)
+        public async Task Delete(int id)
         {
-            throw new NotImplementedException();
+            using var session = _documentStore.OpenSession();
+            var entityToDelete = Get(s => s.Id == id).SingleOrDefault();
+            if (entityToDelete != null)
+            {
+                session.Delete(entityToDelete);
+                await session.SaveChangesAsync();
+            }
+            session.Dispose();
         }
 
         public IEnumerable<TEntity> Get(Expression<Func<TEntity, bool>> filter = null, Func<IMartenQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null)
@@ -63,14 +73,17 @@ namespace Infrastructure.Repositories
         public async Task Insert(TEntity entity)
         {
             using var session = _documentStore.OpenSession();
-            session.Store(entity);
+            session.Insert(entity);
             await session.SaveChangesAsync();
             session.Dispose();
         }
 
-        public void Update(TEntity entityToUpdate)
+        public async Task Update(TEntity entityToUpdate)
         {
-            throw new NotImplementedException();
+            using var session = _documentStore.OpenSession();
+            session.Update(entityToUpdate);
+            await session.SaveChangesAsync();
+            session.Dispose();
         }
     }
 }
