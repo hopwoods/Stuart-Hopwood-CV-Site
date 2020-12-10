@@ -36,7 +36,7 @@ const LightTheme: ThemeColors = {
   primary: "#B55C53",
   primaryShades: "#a74c43",
   lightShades: "#F3F7FA",
-  lightAccent: "#AFB1B0",
+  lightAccent: "#B40542",
   darkShades: "#252934",
   darkAccent: "#A99A83",
   bodyBackground: "#FEFEFE",
@@ -59,7 +59,7 @@ const LightTheme: ThemeColors = {
   warning: "#f0a800",
   info: "#00acf0",
   black: "#000000",
-  hotpink: "#d11997",
+  hotpink: "hotpink",
 };
 
 export default function useTheme(): ThemeColors {

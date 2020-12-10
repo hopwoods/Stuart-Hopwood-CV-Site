@@ -10,17 +10,12 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import { far } from "@fortawesome/free-regular-svg-icons";
 import { fas } from "@fortawesome/free-solid-svg-icons";
-import {
-  Container,
-  Content,
-  Footer,
-  Navbar,
-  Banner,
-} from "./components/layout/";
+import { Container, Content, Footer } from "./components/layout/";
 import { StateProvider } from "./globalState";
 import "./index.css";
 import App from "./pages/App";
 import About from "./pages/About";
+import NotFoundPage from "./pages/NotFoundPage";
 import * as serviceWorker from "./serviceWorker";
 
 library.add(fab, far, fas);
@@ -30,13 +25,11 @@ const routing = (
     <Router>
       <StateProvider>
         <Container>
-          <Banner />
-          <Navbar />
           <Switch>
             <Route exact path="/" component={App} />
             <Route exact path="/about" component={About} />
-            {/* <Route exact path="/SubMenu2" component={SubMenu2Page} /> */}
-            {/* <Route path="/404" component={NotFoundPage} /> */}
+            {/* <Route exact path="/login" component={Login} /> */}
+            <Route path="/404" component={NotFoundPage} />
             <Redirect to="/404" />
           </Switch>
           <Content />

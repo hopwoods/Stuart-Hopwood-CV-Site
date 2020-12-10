@@ -1,11 +1,9 @@
 /** @jsx jsx */
 //import React from "react";
-import { jsx, css } from "@emotion/react";
+import { jsx } from "@emotion/react";
+import { style } from "./About.css";
 
-function App() {
-  const style = css`
-    grid-column: 1 / span 2;
-  `;
+function About() {
   return (
     <div css={style}>
       <h2>About Me</h2>
@@ -14,4 +12,4 @@ function App() {
   );
 }
 
-export default App;
+export default About;

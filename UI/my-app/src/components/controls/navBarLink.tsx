@@ -1,8 +1,7 @@
 /** @jsx jsx */
 import React, { FunctionComponent } from "react";
-import { jsx, css } from "@emotion/react";
+import { jsx, css, keyframes } from "@emotion/react";
 import { FontFamilies } from "../../style";
-import { getGradients } from "../../functions";
 import { Link } from "react-router-dom";
 import useTheme from "../../hooks/useTheme";
 
@@ -19,32 +18,31 @@ export const NavBarLink: FunctionComponent<LinkProps> = ({
   value,
   ...props
 }) => {
-  const gradients = getGradients();
   const themeColors = useTheme();
-  const style = css`  
+  const colorChange = keyframes`
+    0% { color: ${themeColors.white} }
+    50% { color: #ff8fc7; }
+    100% { color: ${themeColors.hotpink} }
+`;
+  const style = css`   
+    display:block;
+    margin-left: 0.5em; 
+    margin-right: 0.5em;
+    text-align: center; 
+  
   a {
     position: relative;
-    color: ${themeColors.text};
+    color: ${themeColors.white};
     text-decoration: none;
     text-transform: uppercase;
     font-family: ${FontFamilies.secondary}
-    font-weight: 400;
-  }
-  a::before {
-    content: "";
-    position: absolute;
-    height: 3px;
-    right: 0px;
-    bottom: -3px;
-    left: 0px;
-    background-color: none;
+    font-weight: 300;     
   }
   a:hover {
-    color: ${themeColors.text};
+    animation: ${colorChange} 0.5s ease; 
+    animation-fill-mode: forwards;
   }
-  a:hover::before {
-    background: ${gradients.textGradient};
-  }
+
 `;
 
   return (

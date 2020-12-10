@@ -18,7 +18,7 @@ interface IMediaQueries {
 export const breakpoints: IBreakpoints = {
   //Relative unit at 16px = 1rem. Helps with scaling.
   small: "45.2rem", // 768px
-  medium: "60.25rem", // 1024px
+  medium: "60.22rem", // 1024px
   large: "80.4rem", // 1366px
   xlarge: "112.95rem", // 1920px
   xxlarge: "150.625rem", // 2560px
