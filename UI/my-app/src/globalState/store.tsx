@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Action } from ".";
+import { Action } from "../globalState";
 
 export interface StateContext {
   darkMode: boolean;

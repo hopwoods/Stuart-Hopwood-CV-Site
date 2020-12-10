@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useReducer } from "react";
-import { AppContext, reducer, defaultState } from ".";
+import { AppContext, reducer, defaultState } from "../globalState";
 
 export const StateProvider: FunctionComponent = ({ children }) => {
   const [globalState, dispatch] = useReducer(reducer, defaultState);

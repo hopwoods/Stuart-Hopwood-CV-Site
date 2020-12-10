@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import { FunctionComponent } from "react";
-import { jsx, css } from "@emotion/core";
+import { jsx, css } from "@emotion/react";
 import { FontFamilies } from "../../style";
-import useTheme from "../../Hooks/useTheme";
+import useTheme from "../../hooks/useTheme";
 
 export const Footer: FunctionComponent = ({ children }) => {
   const GetYear = () => {
@@ -14,7 +14,7 @@ export const Footer: FunctionComponent = ({ children }) => {
   const style = css`
   grid-column: 1 / span 1;
   justify-self: stretch;
-  background-color: ${themeColors.Grey3};
+  background-color: ${themeColors.Grey1};
   border-top: 3px solid ${themeColors.darkShades};
   color: ${themeColors.Grey2};
   padding: 0.4em;

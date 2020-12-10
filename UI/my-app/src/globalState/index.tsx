@@ -1,7 +1,11 @@
-export type { StateContext } from "./store";
-export { AppContext, useStateContext, defaultState } from "./store";
-export { StateProvider } from "./stateProvider";
+export type { StateContext } from "../globalState/store";
+export {
+  AppContext,
+  useStateContext,
+  defaultState,
+} from "../globalState/store";
+export { StateProvider } from "../globalState/stateProvider";
 
-export type { Action } from "./actions";
-export { ActionType, Actions } from "./actions";
-export { reducer } from "./reducers";
+export type { Action } from "../globalState/actions";
+export { ActionType, Actions } from "../globalState/actions";
+export { reducer } from "../globalState/reducers";

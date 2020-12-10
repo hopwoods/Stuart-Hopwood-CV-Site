@@ -1,9 +1,8 @@
 /** @jsx jsx */
 import React, { FunctionComponent } from "react";
-import { jsx, css } from "@emotion/core";
-import useTheme from "../../Hooks/useTheme";
+import { jsx, css } from "@emotion/react";
+import useTheme from "../../hooks/useTheme";
 import { getGradients } from "../../functions";
-import { useStateContext } from "../../globalState";
 import { FontFamilies } from "../../style";
 
 export interface ITextBoxProps {
@@ -11,35 +10,17 @@ export interface ITextBoxProps {
 }
 
 export const Logo: FunctionComponent = () => {
-  const { globalState: state } = useStateContext();
-  const { darkMode } = state;
-  const gradients = getGradients(darkMode);
+  const gradients = getGradients();
   const themeColors = useTheme();
 
-  const style = css`  
+  const style = css`
     position: relative;
     color: ${themeColors.text};
     text-decoration: none;
     text-transform: uppercase;
-    font-family: ${FontFamilies.secondary}
-    font-weight: 400;  
-    
-    &::before {
-        content: "";
-        position: absolute;
-        height: 3px;
-        right: 0px;
-        bottom: -3px;
-        left: 0px;
-        background: ${gradients.textGradient};
-    }
-
-    &:hover {
-      background: ${gradients.textGradient2};
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;      
-    }    
+    margin: 0;
+    font-weight: 100;
   `;
 
-  return <h2 css={style}>Photography Assets</h2>;
+  return <h1 css={style}>Stuart Hopwood</h1>;
 };

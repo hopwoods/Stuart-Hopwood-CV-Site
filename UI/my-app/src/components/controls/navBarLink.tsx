@@ -1,30 +1,25 @@
 /** @jsx jsx */
 import React, { FunctionComponent } from "react";
-import { jsx, css } from "../layout/node_modules/@emotion/core";
+import { jsx, css } from "@emotion/react";
 import { FontFamilies } from "../../style";
 import { getGradients } from "../../functions";
-import { useStateContext } from "../../globalState";
 import { Link } from "react-router-dom";
-import useTheme from "../../Hooks/useTheme";
+import useTheme from "../../hooks/useTheme";
 
-export interface LinkProps {
+export type LinkProps = {
   //Route to be used for the link
   to: string;
 
   //Value to displayed on screen
   value: string;
-}
+};
 
 export const NavBarLink: FunctionComponent<LinkProps> = ({
   to,
   value,
   ...props
 }) => {
-  const { globalState: state } = useStateContext();
-  const { darkMode } = state;
-
-  const gradients = getGradients(darkMode);
-
+  const gradients = getGradients();
   const themeColors = useTheme();
   const style = css`  
   a {

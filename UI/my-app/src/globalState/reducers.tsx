@@ -3,9 +3,6 @@ import { Action, ActionType } from ".";
 
 export const reducer = (state: StateContext, action: Action) => {
   switch (action.type) {
-    case ActionType.SET_MESSAGE:
-      return { ...state, sentMessage: action.payload };
-
     case ActionType.TOGGLE_DARKMODE:
       return { ...state, darkMode: action.payload };
 

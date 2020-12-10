@@ -1,6 +1,4 @@
-import { useStateContext } from "../GlobalState";
-
-export interface IThemeColors {
+export type ThemeColors = {
   text: string;
   textInverse: string;
   primary: string;
@@ -28,46 +26,18 @@ export interface IThemeColors {
   danger: string;
   warning: string;
   info: string;
-}
-
-const DarkTheme: IThemeColors = {
-  text: "#E4E4E4",
-  textInverse: "#3e3e3e",
-  primary: "#B55C53",
-  primaryShades: "#a74c43",
-  lightShades: "#F3F7FA",
-  lightAccent: "#E07851",
-  darkShades: "#3E4148",
-  darkAccent: "#AF9EA8",
-  bodyBackground: "rgb(20, 20, 24)",
-  Grey1: "#101010",
-  Grey2: "#252525",
-  Grey3: "#3f3f3f",
-  Grey4: "#404040",
-  Grey5: "#555555",
-  Grey6: "#6f6f6f",
-  Grey7: "#707070",
-  labelColour: "#bbb",
-  disabledColour: "#ddd",
-  toggleColour: "#2F855A",
-  white: "#fff",
-  green: "#387D4D",
-  red: "#D20008",
-  sideBarGrey: "rgba(75, 75, 75, 0.5)",
-  tableBackground: "rgba(48, 48, 48, 0.5)",
-  danger: "#9c0000",
-  warning: "#f0a800",
-  info: "#00acf0",
+  black: string;
+  hotpink: string;
 };
 
-const LightTheme: IThemeColors = {
+const LightTheme: ThemeColors = {
   text: "#2e2e2e",
   textInverse: "#1e1e1e",
   primary: "#B55C53",
   primaryShades: "#a74c43",
   lightShades: "#F3F7FA",
   lightAccent: "#AFB1B0",
-  darkShades: "#C3C3C3",
+  darkShades: "#252934",
   darkAccent: "#A99A83",
   bodyBackground: "#FEFEFE",
   Grey1: "#909090",
@@ -88,13 +58,11 @@ const LightTheme: IThemeColors = {
   danger: "#9c0000",
   warning: "#f0a800",
   info: "#00acf0",
+  black: "#000000",
+  hotpink: "#d11997",
 };
 
-export default function useTheme(): IThemeColors {
-  const { globalState: state } = useStateContext();
-  const { darkMode } = state;
-
-  const theme = darkMode ? DarkTheme : LightTheme;
-
+export default function useTheme(): ThemeColors {
+  const theme = LightTheme;
   return theme;
 }

@@ -1,29 +1,41 @@
 /** @jsx jsx */
 import { FunctionComponent } from "react";
-import { jsx, css } from "@emotion/core";
-import { NavBarLink, ToggleSwitch } from "../controls";
-import { useStateContext, Actions } from "../../globalState";
+import { jsx, css } from "@emotion/react";
+import { NavBarLink } from "../controls";
 import { FontFamilies, mediaQueries } from "../../style";
 import { getGradients } from "../../functions";
-import useTheme from "../../Hooks/useTheme";
+import useTheme from "../../hooks/useTheme";
 import { Logo } from ".";
 
 export const Navbar: FunctionComponent = ({ children }) => {
-  const { globalState: state, dispatch } = useStateContext();
-  const { darkMode } = state;
-
-  const gradients = getGradients(darkMode);
+  const gradients = getGradients();
   const themeColors = useTheme();
   const style = css`
     grid-column: 1 / span 1;
-    background: ${gradients.gradient1};
     color: ${themeColors.text};
     padding: 0.3em;
     height: fit-content;
-    font-size: 1em;
+    font-size: 1.8em;
     text-transform: uppercase;
+    display: grid;
+      grid-template-columns: minmax(325px, 1fr);
+      grid-template-rows: 6.5rem 4rem;
+      grid-gap: 0em;
+
+    div.JobTitle {
+      grid-column-start: 2 / span 1;      
+      background: ${gradients.textGradient};
+      height: 100%;
+      width: 100%;
+      text-align: center;
+      color: ${themeColors.white};
+      font-weight: 100;
+      text-transform: Capitalize;
+    }
 
     ul {
+      grid-column-start: 1 / span 1;
+      grid-row-start: 1 / span 1;
       list-style-type: none;
       margin: 0;
       padding: 0;
@@ -41,8 +53,8 @@ export const Navbar: FunctionComponent = ({ children }) => {
     }
     ul li.logo {
       grid-column-start: 1 / span 1;
-      text-align: left;
-      align-self: stretch;
+      text-align: center;
+      align-self: center;
     }
 
     ul li label {
@@ -57,117 +69,77 @@ export const Navbar: FunctionComponent = ({ children }) => {
     @media ${mediaQueries.small} {
       background: none;
       ul {
-        grid-template-columns: repeat(12, minmax(65px, 1fr));
-        grid-template-rows: minmax(50px, 1fr);
+        grid-template-columns: repeat(1, minmax(65px, 1fr));
       }
 
       ul li {
         grid-column-start: span 1;
       }
       ul li.logo {
-        grid-column: 1 / span 3;
-        text-align: left;
-        justify-self: start;
-      }
-      ul li.dark-mode-toggle {
-        grid-column: 8 / span 3;
-        justify-self: stretch;
-        text-align: right;
+        grid-column: 1 / span 1;
       }
     }
 
     @media ${mediaQueries.medium} {
       background: none;
       ul {
-        grid-template-columns: repeat(14, minmax(65px, 1fr));
-        grid-template-rows: minmax(50px, 1fr);
+        grid-template-columns: repeat(1, minmax(65px, 1fr));
       }
 
       ul li {
         grid-column-start: span 1;
       }
       ul li.logo {
-        grid-column: 1 / span 3;
-        justify-self: start;
-      }
-      ul li.dark-mode-toggle {
-        grid-column: 10 / span 3;
-        justify-self: stretch;
-        text-align: right;
+        grid-column: 1 / span 1;
       }
     }
 
     @media ${mediaQueries.large} {
       background: none;
       ul {
-        grid-template-columns: repeat(16, minmax(65px, 1fr));
-        grid-template-rows: minmax(50px, 1fr);
+        grid-template-columns: repeat(1, minmax(65px, 1fr));
       }
 
       ul li {
         grid-column-start: span 1;
       }
       ul li.logo {
-        grid-column: 1 / span 3;
-        justify-self: start;
-      }
-      ul li.dark-mode-toggle {
-        grid-column: 19 / span 3;
-        justify-self: stretch;
-        text-align: right;
+        grid-column: 1 / span 1;
       }
     }
 
     @media ${mediaQueries.xlarge} {
-      font-size: 1em;
+      font-size: 1.8em;
       background: none;
       ul {
-        grid-template-columns: repeat(18, minmax(65px, 1fr));
-        grid-template-rows: minmax(50px, 1fr);
+        grid-template-columns: repeat(1, minmax(65px, 1fr));
       }
 
       ul li {
         grid-column-start: span 1;
       }
       ul li.logo {
-        grid-column: 1 / span 3;
-        justify-self: start;
-      }
-      ul li.dark-mode-toggle {
-        grid-column: 19 / span 2;
-        justify-self: stretch;
-        text-align: right;
+        grid-column: 1 / span 1;
       }
     }
 
     @media ${mediaQueries.xxlarge} {
-      font-size: 1em;
+      font-size: 1.8em;
       background: none;
       ul {
-        grid-template-columns: repeat(20, minmax(65px, 1fr));
-        grid-template-rows: minmax(50px, 1fr);
+        grid-template-columns: repeat(1, minmax(65px, 1fr));
       }
 
       ul li {
         grid-column-start: span 1;
       }
       ul li.logo {
-        grid-column: 1 / span 2;
-        justify-self: start;
-      }
-      ul li.dark-mode-toggle {
-        grid-column: 19 / span 2;
-        justify-self: stretch;
-        text-align: right;
+        grid-column: 1 / span 1;
       }
     }
 
 
   `;
-
-  const toggleDarkMode = (value: boolean) => {
-    dispatch(Actions.ToggleDarkMode(value));
-  };
 
   return (
     <nav css={style} id="NavBar">
@@ -175,25 +147,8 @@ export const Navbar: FunctionComponent = ({ children }) => {
         <li className="logo">
           <Logo />
         </li>
-        <li>
-          <NavBarLink to="/" value="Home" />
-        </li>
-        <li>
-          <NavBarLink to="/about" value="About Me" />
-        </li>
-        <li className="dark-mode-toggle">
-          <label>Dark Mode?</label>
-          <ToggleSwitch
-            id="toggle-dark-mode"
-            name="toggle-dark-mode"
-            checked={darkMode ? true : false}
-            optionLabels={["Yes", "No"]}
-            small={true}
-            disabled={false}
-            onChange={() => toggleDarkMode(!darkMode)}
-          />
-        </li>
       </ul>
+      <div className="JobTitle">Software Developer</div>
     </nav>
   );
 };
