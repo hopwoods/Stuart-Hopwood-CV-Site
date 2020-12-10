@@ -10,7 +10,7 @@ export const Container: FunctionComponent = ({ children }) => {
   const themeColors = useTheme();
   const style = css`
   font-family: ${FontFamilies.primary}
-  font-weight: 300;
+  font-weight: 100;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: ${themeColors.text};

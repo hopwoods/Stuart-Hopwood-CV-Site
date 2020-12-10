@@ -1,4 +1,5 @@
-export { FontFamilies } from "../style/font-families";
-export { Gradients } from "../style/gradients";
-export { mediaQueries, breakpoints } from "../style/breakpoints";
-export type { cssGradients } from "../style/gradients";
+export { FontFamilies } from "./font-families";
+export { Gradients } from "./gradients";
+export { mediaQueries, breakpoints } from "./breakpoints";
+export { muiTheme } from "./materialTheme";
+export type { cssGradients } from "./gradients";
