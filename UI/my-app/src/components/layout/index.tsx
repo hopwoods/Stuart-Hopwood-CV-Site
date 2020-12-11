@@ -4,3 +4,4 @@ export { Footer } from "../layout/footer";
 export { Content } from "../layout/content";
 export { Banner } from "../layout/banner";
 export { Bubbles } from "../layout/bubbles";
+export { About } from "./About";

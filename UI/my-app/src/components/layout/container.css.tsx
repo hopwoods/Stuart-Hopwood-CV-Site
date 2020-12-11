@@ -12,15 +12,16 @@ export const style = css`
   color: ${themeColors.text};
   background-color: ${themeColors.white};  
   display: grid;
-  grid-template-columns: minmax(50px, 1fr);
-  grid-template-rows:
-    1fr
-    auto
-    1fr
-    minmax(20px, 0.1fr);
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "banner"
+    "nav"
+    "content"
+    "footer";
   grid-gap: 0em;
-  height: 100%;
-  min-height: 100vh;
+  min-height: 100vh;  
+  height: fit-content;
   line-height: 1.5;
 
   h1,
@@ -30,9 +31,16 @@ export const style = css`
   h5,
   h6 {
     font-family: ${FontFamilies.secondary};
-    font-weight: 100;
+    font-weight: 300;
     color: ${themeColors.black};
     line-height: 1.25;    
+  }
+
+  h1 {
+    font-weight: 500;
+    border-bottom: solid 3px;
+    padding-bottom: 0.15em;
+    text-transform: uppercase;
   }
 
   font-size: 1rem;

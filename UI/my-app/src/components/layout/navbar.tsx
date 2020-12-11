@@ -31,19 +31,19 @@ export const Navbar: FunctionComponent = ({ children }) => {
     <nav css={style} id="NavBar" className={navBarScrolledStateClass}>
       <ul role="menubar">
         <li>
-          <NavBarLink to="/home" value="Home" />
+          <NavBarLink isHashLink={true} to="/#home" value="Home" />
         </li>
         <li>
-          <NavBarLink to="/about" value="About" />
+          <NavBarLink isHashLink={true} to="/#about" value="About" />
         </li>
         <li>
-          <NavBarLink to="/home" value="Home" />
+          <NavBarLink isHashLink={false} to="/experience" value="Experience" />
         </li>
         <li>
-          <NavBarLink to="/about" value="About" />
+          <NavBarLink isHashLink={false} to="/education" value="Education" />
         </li>
         <li>
-          <NavBarLink to="/login" value="Login" />
+          <NavBarLink isHashLink={false} to="/login" value="Login" />
         </li>
       </ul>
     </nav>

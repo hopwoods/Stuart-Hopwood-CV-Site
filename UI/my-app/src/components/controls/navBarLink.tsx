@@ -2,7 +2,8 @@
 import React, { FunctionComponent } from "react";
 import { jsx, css, keyframes } from "@emotion/react";
 import { FontFamilies } from "../../style";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import useTheme from "../../hooks/useTheme";
 
 export type LinkProps = {
@@ -11,11 +12,15 @@ export type LinkProps = {
 
   //Value to displayed on screen
   value: string;
+
+  //Is this a link to a component page or a hashlink (section on a page)?
+  isHashLink: boolean;
 };
 
 export const NavBarLink: FunctionComponent<LinkProps> = ({
   to,
   value,
+  isHashLink,
   ...props
 }) => {
   const themeColors = useTheme();
@@ -39,7 +44,7 @@ export const NavBarLink: FunctionComponent<LinkProps> = ({
     font-weight: 300;     
   }
   a:hover {
-    animation: ${colorChange} 0.5s ease; 
+    animation: ${colorChange} 0.75s; 
     animation-fill-mode: forwards;
   }
 
@@ -48,7 +53,13 @@ export const NavBarLink: FunctionComponent<LinkProps> = ({
   return (
     <React.Fragment>
       <span css={style}>
-        <Link to={to}>{value}</Link>
+        {isHashLink ? (
+          <HashLink smooth to={to}>
+            {value}
+          </HashLink>
+        ) : (
+          <NavLink to={to}>{value}</NavLink>
+        )}
       </span>
     </React.Fragment>
   );

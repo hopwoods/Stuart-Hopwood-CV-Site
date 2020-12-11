@@ -23,7 +23,7 @@ const growDown = keyframes`
 `;
 
 export const style = css`
-    grid-column: 1 / span 1;
+    grid-area: nav;
     background-color: ${themeColors.darkShades};
     color: ${themeColors.white};
     padding: 0.3em;
@@ -31,6 +31,10 @@ export const style = css`
     font-size: 1.1em;
     text-transform: uppercase;
     border-bottom: 0.3em solid ${themeColors.lightAccent};
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
 
     &.scrolled {
       position: sticky;
@@ -48,6 +52,8 @@ export const style = css`
       grid-template-columns: minmax(65px, 1fr);
       grid-gap: 0.25em;
       align-items: center;
+      max-width: 40rem;
+      justify-self: center;
     }
 
     ul li {

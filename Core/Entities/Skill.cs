@@ -9,5 +9,7 @@ namespace Core.Entities
         public string SkillName { get; set; }
 
         public IEnumerable<SkillExample> SkillExamples { get; set; }
+
+        public int Percentage { get; set; }
     }
 }

@@ -63,10 +63,9 @@ export const up = keyframes`
 `;
 
 export const style = css`
-  grid-column: 1 / span 1;
-  grid-row: 1 / span 1;
+  grid-area: banner;
   padding: 1em;
-  height: fit-content;
+  height: 1fr;
   color: ${themeColors.white};
   font-size: 2rem;
   justify-self: stretch;
