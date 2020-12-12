@@ -9,10 +9,11 @@ import {
   Content,
   Footer,
 } from "../components/layout";
-import { Link as RouterLink } from "react-router-dom";
-import { muiTheme } from "../style";
-import { Button, ThemeProvider } from "@material-ui/core";
+import { Button } from "@material-ui/core";
+import { HashLink } from "react-router-hash-link";
 import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
+import ScrollToTopButton from "../components/controls/scrollToTopButton";
+import { toTopButton } from "./App.css";
 
 function App() {
   return (
@@ -23,24 +24,27 @@ function App() {
           <br />
           I'm a full stack Web Developer.
         </p>
-        <ThemeProvider theme={muiTheme}>
-          <Button
-            className="about"
-            variant="outlined"
-            color="primary"
-            size="large"
-            endIcon={<ArrowDownwardIcon />}
-            component={RouterLink}
-            to="#about"
-          >
-            Find Out More
-          </Button>
-          <Bubbles />
-        </ThemeProvider>
+
+        <Button
+          className="about"
+          variant="outlined"
+          color="primary"
+          size="large"
+          endIcon={<ArrowDownwardIcon />}
+          component={HashLink}
+          to="/#about"
+          smooth
+        >
+          Find Out More
+        </Button>
+        <Bubbles />
       </Banner>
       <Navbar />
       <Content>
         <About />
+        <div css={toTopButton}>
+          <ScrollToTopButton color="secondary" />
+        </div>
       </Content>
       <Footer />
     </React.Fragment>

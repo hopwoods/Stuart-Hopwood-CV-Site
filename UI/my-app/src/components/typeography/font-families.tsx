@@ -4,6 +4,6 @@ type fontFamilies = {
 };
 
 export const FontFamilies: fontFamilies = {
-  primary: "'Raleway', sans-serif;",
+  primary: "'Roboto', sans-serif;",
   secondary: "'Quicksand', sans-serif;",
 };

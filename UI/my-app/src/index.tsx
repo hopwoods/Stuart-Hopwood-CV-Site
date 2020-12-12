@@ -1,24 +1,23 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { fab } from "@fortawesome/free-brands-svg-icons";
-import { far } from "@fortawesome/free-regular-svg-icons";
-import { fas } from "@fortawesome/free-solid-svg-icons";
-import { Container, Footer } from "./components/layout/";
+import { Container } from "./components/layout/";
 import { StateProvider } from "./globalState";
-import "./index.css";
+import { Routes, ScrollToTop } from "./components/services";
+import { ThemeProvider } from "@material-ui/core";
+import { materialTheme } from "./style";
 import * as serviceWorker from "./serviceWorker";
-import { Routes } from "./components/services";
-
-library.add(fab, far, fas);
+import "./index.css";
 
 const routing = (
   <React.StrictMode>
     <Router>
       <StateProvider>
+        <ScrollToTop />
         <Container>
-          <Routes />
+          <ThemeProvider theme={materialTheme}>
+            <Routes />
+          </ThemeProvider>
         </Container>
       </StateProvider>
     </Router>

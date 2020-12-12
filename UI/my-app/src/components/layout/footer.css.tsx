@@ -9,9 +9,9 @@ grid-area: footer;
 justify-self: stretch;
 background-color: ${themeColors.Grey1};
 border-top: 3px solid ${themeColors.darkShades};
-color: ${themeColors.Grey2};
+color: ${themeColors.white};
 padding: 0.4em;
 font-size: 0.9em;
-font-family: ${FontFamilies.secondary}
+font-family: ${FontFamilies.primary}
 font-weight: 300;
 `;

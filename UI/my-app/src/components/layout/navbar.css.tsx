@@ -28,9 +28,9 @@ export const style = css`
     color: ${themeColors.white};
     padding: 0.3em;
     height: fit-content;
-    font-size: 1.1em;
+    font-size: 1.2em;
     text-transform: uppercase;
-    border-bottom: 0.3em solid ${themeColors.lightAccent};
+    border-bottom: 0.3em solid ${themeColors.Grey3};
     display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
@@ -71,20 +71,23 @@ export const style = css`
     margin-right: 0.4em;
     }
 
-    @media ${mediaQueries.small} {
+    @media ${mediaQueries.xxlarge} {
+      font-size: 1.2em;
       ul {
-        grid-template-columns: minmax(65px, 1fr);
+        grid-template-columns: repeat(5, auto);
         grid-template-rows: minmax(50px, 1fr);
+        justify-items: center;
       }
 
       ul li {
         grid-column-start: span 1;
       }
     }
-
-    @media ${mediaQueries.medium} {
+    
+    @media ${mediaQueries.xlarge} {
+      font-size: 1.2em;
       ul {
-        grid-template-columns: repeat(5, minmax(65px, 1fr));
+        grid-template-columns: repeat(5, auto);
         grid-template-rows: minmax(50px, 1fr);
         justify-items: center;
       }
@@ -94,9 +97,11 @@ export const style = css`
       }
     }
 
+    
     @media ${mediaQueries.large} {
+      font-size: 1.2em;
       ul {
-        grid-template-columns: repeat(5, minmax(65px, 1fr));
+        grid-template-columns: repeat(5, auto);
         grid-template-rows: minmax(50px, 1fr);        
         justify-items: center;
       }
@@ -106,10 +111,11 @@ export const style = css`
       }
     }
 
-    @media ${mediaQueries.xlarge} {
-      font-size: 1em;
+    
+    @media ${mediaQueries.medium} {
+      font-size: 1.2em;
       ul {
-        grid-template-columns: repeat(5, minmax(65px, 1fr));
+        grid-template-columns: repeat(5, auto);
         grid-template-rows: minmax(50px, 1fr);
         justify-items: center;
       }
@@ -119,12 +125,11 @@ export const style = css`
       }
     }
 
-    @media ${mediaQueries.xxlarge} {
-      font-size: 1em;
+    @media ${mediaQueries.small} {
+      font-size: 1.2em;
       ul {
-        grid-template-columns: repeat(5, minmax(65px, 1fr));
+        grid-template-columns: minmax(65px, 1fr);
         grid-template-rows: minmax(50px, 1fr);
-        justify-items: center;
       }
 
       ul li {

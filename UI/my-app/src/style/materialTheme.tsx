@@ -1,6 +1,6 @@
 import { createMuiTheme } from "@material-ui/core/styles";
 
-export const muiTheme = createMuiTheme({
+export const materialTheme = createMuiTheme({
   palette: {
     primary: {
       main: "#ffffff",
@@ -8,5 +8,7 @@ export const muiTheme = createMuiTheme({
     secondary: {
       main: "#7f7f7f",
     },
+    contrastThreshold: 4,
+    tonalOffset: 0.5,
   },
 });

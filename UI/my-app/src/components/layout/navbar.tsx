@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { FunctionComponent } from "react";
+import { FunctionComponent, useCallback } from "react";
 import { jsx } from "@emotion/react";
 import { NavBarLink } from "../controls";
 import { style } from "./navbar.css";
@@ -9,24 +9,27 @@ import useWindowSize from "../../hooks/useWindowSize";
 export const Navbar: FunctionComponent = ({ children }) => {
   const [scrolled, setScrolled] = useState(false);
   const size = useWindowSize();
-  const handleScroll = () => {
+
+  const handleScroll = useCallback(() => {
     const offset = window.scrollY;
     if (offset > size.height + 65) {
       setScrolled(true);
     } else {
       setScrolled(false);
     }
-  };
+  }, [size.height]);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-  });
+  }, [handleScroll]);
+
   let navBarScrolledStateClass;
   if (scrolled) {
     navBarScrolledStateClass = "scrolled";
   } else {
     navBarScrolledStateClass = "";
   }
+
   return (
     <nav css={style} id="NavBar" className={navBarScrolledStateClass}>
       <ul role="menubar">

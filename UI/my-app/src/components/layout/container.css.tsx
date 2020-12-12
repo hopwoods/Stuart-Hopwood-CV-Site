@@ -6,7 +6,7 @@ import useTheme from "../../hooks/useTheme";
 const themeColors = useTheme();
 export const style = css`
   font-family: ${FontFamilies.primary}
-  font-weight: 100;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: ${themeColors.text};
@@ -23,6 +23,7 @@ export const style = css`
   min-height: 100vh;  
   height: fit-content;
   line-height: 1.5;
+  font-size: 1rem;
 
   h1,
   h2,
@@ -42,26 +43,22 @@ export const style = css`
     padding-bottom: 0.15em;
     text-transform: uppercase;
   }
-
-  font-size: 1rem;
-
+ 
+  @media ${mediaQueries.xxlarge} {
+    font-size: 1.3rem;
+  }  
+  @media ${mediaQueries.xlarge} {
+    font-size: 1rem;
+  }
+  @media ${mediaQueries.large} {
+    font-size: 1rem;
+  }
+  @media ${mediaQueries.medium} {
+    font-size: 1rem;
+  }
   @media ${mediaQueries.small} {
     font-size: 1rem;
   }
 
-  @media ${mediaQueries.medium} {
-    font-size: 1rem;
-  }
 
-  @media ${mediaQueries.large} {
-    font-size: 1.1rem;
-  }
-
-  @media ${mediaQueries.xlarge} {
-    font-size: 1.3rem;
-  }
-
-  @media ${mediaQueries.xxlarge} {
-    font-size: 1.5rem;
-  }
 `;

@@ -1,5 +1,5 @@
-export { FontFamilies } from "./font-families";
+export { FontFamilies } from "../components/typeography/font-families";
 export { gradients as Gradients } from "./gradients";
 export { mediaQueries, breakpoints } from "./breakpoints";
-export { muiTheme } from "./materialTheme";
+export { materialTheme } from "./materialTheme";
 export { gradients } from "./gradients";
