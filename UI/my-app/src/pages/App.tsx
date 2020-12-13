@@ -28,7 +28,7 @@ function App() {
         <Button
           className="about"
           variant="outlined"
-          color="primary"
+          color="secondary"
           size="large"
           endIcon={<ArrowDownwardIcon />}
           component={HashLink}

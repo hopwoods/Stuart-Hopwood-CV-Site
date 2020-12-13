@@ -33,7 +33,7 @@ export const style = css`
   h6 {
     font-family: ${FontFamilies.secondary};
     font-weight: 300;
-    color: ${themeColors.black};
+    color: ${themeColors.text};
     line-height: 1.25;    
   }
 
@@ -43,7 +43,7 @@ export const style = css`
     padding-bottom: 0.15em;
     text-transform: uppercase;
   }
- 
+
   @media ${mediaQueries.xxlarge} {
     font-size: 1.3rem;
   }  

@@ -1,2 +1,1 @@
-export type { AssetType } from "./AssetType";
-export type { Asset } from "./Asset";
+export type { SocialButtonLinkProps } from "./socialButtonLinkProps";

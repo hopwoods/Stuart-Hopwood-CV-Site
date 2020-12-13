@@ -12,6 +12,7 @@ export const style = css`
   height: 100vh;
   width: 50vw;
   place-self: start center;
+  justify-items: center;
 
   h1 {
     grid-column: 1 / span 2;
@@ -29,10 +30,10 @@ export const style = css`
   }
 
   @media ${mediaQueries.xxlarge} {
-    width: 50vw;
+    width: 70vw;
   }
   @media ${mediaQueries.xlarge} {
-    width: 50vw;
+    width: 70vw;
   }
   @media ${mediaQueries.large} {
     width: 60vw;

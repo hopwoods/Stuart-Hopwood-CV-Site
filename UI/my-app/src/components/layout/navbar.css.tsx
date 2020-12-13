@@ -35,6 +35,7 @@ export const style = css`
     grid-template-columns: 1fr;
     justify-items: center;
     align-items: center;
+    z-index: 999;
 
     &.scrolled {
       position: sticky;
@@ -42,6 +43,7 @@ export const style = css`
       left: 0;
       animation: ${growDown} 300ms ease-in-out;
       animation: ${fadeIn} 300ms ease-in-out;
+      box-shadow: 0 0 7px rgba(0,0,0,0.65);
     }
 
     ul {

@@ -1,7 +1,10 @@
 {
   "dependencies": {
     "@types/react-transition-group": "^4.4.0",
+    "babel-plugin-macros": "^3.0.0",
     "react-icons": "^4.1.0",
+    "react-responsive-picture": "^3.2.2",
+    "react-reveal": "^1.2.2",
     "react-router-hash-link": "^2.3.1",
     "react-transition-group": "^4.4.1"
   },

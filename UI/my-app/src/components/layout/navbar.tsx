@@ -12,7 +12,7 @@ export const Navbar: FunctionComponent = ({ children }) => {
 
   const handleScroll = useCallback(() => {
     const offset = window.scrollY;
-    if (offset > size.height + 65) {
+    if (offset > size.height + 85) {
       setScrolled(true);
     } else {
       setScrolled(false);

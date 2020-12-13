@@ -21,7 +21,6 @@ export type ThemeColors = {
   white: string;
   green: string;
   red: string;
-  sideBarGrey: string;
   tableBackground: string;
   danger: string;
   warning: string;
@@ -30,7 +29,7 @@ export type ThemeColors = {
   hotpink: string;
 };
 
-const LightTheme: ThemeColors = {
+const theme: ThemeColors = {
   text: "#2e2e2e",
   textInverse: "#1e1e1e",
   primary: "#B55C53",
@@ -38,7 +37,7 @@ const LightTheme: ThemeColors = {
   lightShades: "#F3F7FA",
   lightAccent: "#B40542",
   darkShades: "#252934",
-  darkAccent: "#A99A83",
+  darkAccent: "#700533",
   bodyBackground: "#FEFEFE",
   Grey1: "#909090",
   Grey2: "#a5a5a5",
@@ -53,7 +52,6 @@ const LightTheme: ThemeColors = {
   white: "#fff",
   green: "#387D4D",
   red: "#D20008",
-  sideBarGrey: "rgba(220, 220, 220, 0.3)",
   tableBackground: "rgba(255, 255, 255, 0.5)",
   danger: "#9c0000",
   warning: "#f0a800",
@@ -63,6 +61,5 @@ const LightTheme: ThemeColors = {
 };
 
 export default function useTheme(): ThemeColors {
-  const theme = LightTheme;
   return theme;
 }

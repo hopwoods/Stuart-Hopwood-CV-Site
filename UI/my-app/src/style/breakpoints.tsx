@@ -1,21 +1,29 @@
-interface IBreakpoints {
+type Breakpoints = {
   small: string;
   medium: string;
   large: string;
   xlarge: string;
   xxlarge: string;
-}
+};
 
-interface IMediaQueries {
+type PixelBreakpoints = {
+  small: number;
+  medium: number;
+  large: number;
+  xlarge: number;
+  xxlarge: number;
+};
+
+type MediaQueries = {
   small: string;
   medium: string;
   large: string;
   xlarge: string;
   xxlarge: string;
   retina: string;
-}
+};
 
-export const breakpoints: IBreakpoints = {
+export const breakpoints: Breakpoints = {
   //Relative unit at 16px = 1rem. Helps with scaling.
   small: "45.2rem", // 768px
   medium: "60.24rem", // 1024px
@@ -24,7 +32,15 @@ export const breakpoints: IBreakpoints = {
   xxlarge: "150.625rem", // 2560px
 };
 
-export const mediaQueries: IMediaQueries = {
+export const pixelBreakpoints: PixelBreakpoints = {
+  small: 768,
+  medium: 1024,
+  large: 1366,
+  xlarge: 1920,
+  xxlarge: 2560,
+};
+
+export const mediaQueries: MediaQueries = {
   // Media Queries
   small: `screen and (max-width: ${breakpoints.small})`,
   medium: `screen and (max-width: ${breakpoints.medium})`,
