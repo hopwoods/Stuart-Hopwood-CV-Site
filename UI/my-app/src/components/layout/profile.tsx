@@ -9,7 +9,7 @@ import { Fade, Bounce } from "react-reveal";
 import ProfilePicture200 from "../../images/ProfilePicture-200.png";
 import ProfilePicture300 from "../../images/ProfilePicture-300.png";
 import ProfilePicture400 from "../../images/ProfilePicture-400.png";
-import { SocialIcons } from ".";
+import { AboutText, SocialIcons } from ".";
 
 export const Profile: FunctionComponent = () => {
   return (
@@ -41,7 +41,7 @@ export const Profile: FunctionComponent = () => {
             ]}
           />
         </div>
-        <div>About Me Text (From DB) Here.</div>
+        <AboutText />
         <PhoneNumber />
         <Email />
         <Location />

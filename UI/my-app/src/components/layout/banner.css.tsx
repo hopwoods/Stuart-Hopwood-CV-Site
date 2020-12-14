@@ -65,12 +65,11 @@ export const up = keyframes`
 export const style = css`
   grid-area: banner;
   padding: 1em;
-  height: 1fr;
   color: ${themeColors.white};
   font-size: 2rem;
   justify-self: stretch;
   align-self: stretch;
-  height: 100vh;
+  height: fit-content;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(2, 0.5fr);
@@ -91,6 +90,10 @@ export const style = css`
   );
   background-size: 400% 400%;
   animation: ${gradient} 15s ease-out infinite;
+
+  &.fullscreen {
+    height: 100vh;
+  }
 
   p {
     align-self: end;

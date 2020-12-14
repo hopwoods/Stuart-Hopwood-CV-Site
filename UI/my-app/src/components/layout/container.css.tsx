@@ -20,7 +20,6 @@ export const style = css`
     "content"
     "footer";
   grid-gap: 0em;
-  min-height: 100vh;  
   height: fit-content;
   line-height: 1.5;
   font-size: 1rem;
@@ -42,6 +41,15 @@ export const style = css`
     border-bottom: solid 3px;
     padding-bottom: 0.15em;
     text-transform: uppercase;
+  }
+
+  h1.inverse,
+  h2.inverse,
+  h3.inverse,
+  h4.inverse,
+  h5.inverse,
+  h6.inverse {
+    color: ${themeColors.white};  
   }
 
   @media ${mediaQueries.xxlarge} {

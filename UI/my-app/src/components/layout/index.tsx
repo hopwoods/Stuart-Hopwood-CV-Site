@@ -6,3 +6,5 @@ export { Banner } from "../layout/banner";
 export { Bubbles } from "../layout/bubbles";
 export { About } from "./About";
 export { SocialIcons } from "./socialIcons";
+export { Loading } from "./loading";
+export { AboutText } from "./aboutText";

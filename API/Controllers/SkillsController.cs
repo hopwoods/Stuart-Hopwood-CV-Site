@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Logging;
 
 namespace API.Controllers
@@ -46,6 +47,7 @@ namespace API.Controllers
         // PUT: api/Skills/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
+        [Authorize]
         public IActionResult PutSkill(int id, Skill skill)
         {
             if (id != skill.Id)
@@ -65,6 +67,7 @@ namespace API.Controllers
         // POST: api/Skills
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
+        [Authorize]
         public async Task<ActionResult<Skill>> PostSkill(Skill skill)
         {
             await _repository.Insert(skill);
@@ -73,6 +76,7 @@ namespace API.Controllers
 
         // DELETE: api/Skills/5
         [HttpDelete("{id}")]
+        [Authorize]
         public IActionResult DeleteSkill(int id)
         {
             var skill = _repository.GetById(id);

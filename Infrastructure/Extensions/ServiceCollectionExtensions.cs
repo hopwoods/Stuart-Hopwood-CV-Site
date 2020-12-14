@@ -18,6 +18,7 @@ namespace Infrastructure.Extensions
         public static IServiceCollection AddApiServices(this IServiceCollection serviceCollection)
         {
             serviceCollection.AddTransient<ISkillRepository<Skill>, SkillRepository<Skill>>();
+            serviceCollection.AddTransient<IAboutTextRepository<AboutText>, AboutTextRepository<AboutText>>();
 
             return serviceCollection;
         }

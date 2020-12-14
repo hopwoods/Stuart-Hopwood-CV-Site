@@ -11,7 +11,7 @@ function NotFoundPage() {
   const themeColors = useTheme();
   return (
     <React.Fragment>
-      <Banner id="404">
+      <Banner id="404" fullscreen={true}>
         <div css={grid}>
           <img src={darthImg} alt="Darth Vader" css={darth} />
           <span css={text}>I find your lack of navigation disturbing.</span>

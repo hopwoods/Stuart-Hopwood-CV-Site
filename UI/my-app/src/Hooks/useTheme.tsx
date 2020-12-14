@@ -37,7 +37,7 @@ const theme: ThemeColors = {
   lightShades: "#F3F7FA",
   lightAccent: "#B40542",
   darkShades: "#252934",
-  darkAccent: "#700533",
+  darkAccent: "#910035",
   bodyBackground: "#FEFEFE",
   Grey1: "#909090",
   Grey2: "#a5a5a5",
@@ -57,7 +57,7 @@ const theme: ThemeColors = {
   warning: "#f0a800",
   info: "#00acf0",
   black: "#000000",
-  hotpink: "hotpink",
+  hotpink: "#FD0151",
 };
 
 export default function useTheme(): ThemeColors {

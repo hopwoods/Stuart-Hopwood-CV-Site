@@ -18,7 +18,7 @@ import { toTopButton } from "./App.css";
 function App() {
   return (
     <React.Fragment>
-      <Banner id="home">
+      <Banner id="home" fullscreen={true}>
         <p>
           Hello I'm <span className="name">Stuart Hopwood.</span>
           <br />
