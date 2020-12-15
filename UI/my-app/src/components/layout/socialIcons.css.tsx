@@ -2,10 +2,11 @@
 import { css } from "@emotion/react";
 
 export const style = css`
-  grid-colum: 1 / span 1;
+  grid-column: 1 / span 1;
+  justify-self: stretch;
   padding: 1em;
   display: grid;
-  grid-template-columns: repeat(4, 4em);
+  grid-template-columns: repeat(4, 5em);
   grid-template-rows: auto;
   grid-gap: 0em;
   height: fit-content;

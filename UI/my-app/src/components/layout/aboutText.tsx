@@ -1,13 +1,11 @@
-import React, {
-  FunctionComponent,
-  useCallback,
-  useEffect,
-  useState,
-} from "react";
-
-import { AxiosResponse, Globals } from "../../functions/";
+/** @jsx jsx */
+import { FunctionComponent, useEffect, useState } from "react";
+import { jsx } from "@emotion/react";
+import { Globals } from "../../functions/";
 import { Api } from "../../functions";
 import { Loading } from ".";
+import { style } from "./aboutText.css";
+import parse from "html-react-parser";
 
 type AboutText = {
   id: number;
@@ -15,21 +13,19 @@ type AboutText = {
 };
 
 export const AboutText: FunctionComponent = () => {
-  const [aboutText, setAboutText] = useState<AboutText>();
+  const [aboutText, setAboutText] = useState<AboutText>({
+    id: 0,
+    text: "Default",
+  });
   const [loading, setLoading] = useState(true);
   const apiUrl = Globals.apiSettings.audience;
 
-  const loadAboutText = useCallback(() => {
-    Api.get<AboutText>(`${apiUrl}AboutText`).then((response) => {
-      setAboutText(response.data);
+  useEffect(() => {
+    Api.get<AboutText>(`${apiUrl}AboutText`).then((data) => {
+      setAboutText(data.data);
       setLoading(false);
-      console.log(response.data);
     });
   }, [apiUrl]);
 
-  useEffect(() => {
-    loadAboutText();
-  }, [loadAboutText]);
-
-  return <span>{aboutText?.text}</span>;
+  return loading ? <Loading /> : <div css={style}>{parse(aboutText.text)}</div>;
 };

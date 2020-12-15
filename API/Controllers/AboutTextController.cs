@@ -25,23 +25,23 @@ namespace API.Controllers
 
         // GET: api/AboutText
         [HttpGet]
-        public ActionResult<IEnumerable<AboutText>> GetAboutText()
+        public ActionResult<AboutText> GetAboutText()
         {
-            return _repository.Get().ToList();
+            return _repository.Get().FirstOrDefault();
         }
 
         // GET: api/AboutText/5
         [HttpGet("{id}")]
         public ActionResult<AboutText> GetAboutText(int id)
         {
-            var AboutText = _repository.GetById(id);
+            var aboutText = _repository.GetById(id);
 
-            if (AboutText == null)
+            if (aboutText == null)
             {
                 return NotFound();
             }
 
-            return AboutText;
+            return aboutText;
         }
 
         // PUT: api/AboutText/5

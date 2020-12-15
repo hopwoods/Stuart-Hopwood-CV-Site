@@ -6,6 +6,7 @@ const themeColors = useTheme();
 
 export const style = css`
   grid-colum: 1 / span 1;
+  justify-self: stretch;
   padding: 1em;
   display: grid;
   grid-template-columns: 1.5em auto;
