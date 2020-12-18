@@ -7,20 +7,23 @@ import { Routes, ScrollToTop } from "./services";
 import { ThemeProvider } from "@material-ui/core";
 import { materialTheme } from "./style";
 import { Auth0Provider } from "@auth0/auth0-react";
+import { Globals } from "./functions/";
+import CssBaseline from "@material-ui/core/CssBaseline";
 import * as serviceWorker from "./serviceWorker";
 import "./index.css";
 
 const routing = (
   <React.StrictMode>
     <Auth0Provider
-      domain="dev-uzn2jv6o.eu.auth0.com"
-      clientId="jDQJS0iW7T1i3RCpmTYjAqOzFDiiUZ25"
-      redirectUri="https://localhost:3000/admin"
-      audience="https://localhost:5001/api/"
+      domain={Globals.ApiSettings.Audience}
+      clientId={Globals.ClientSettings.ClientId}
+      redirectUri={Globals.ClientSettings.RedirectUrl}
+      audience={Globals.ApiSettings.Audience}
     >
       <Router>
         <StateProvider>
           <ScrollToTop />
+          <CssBaseline />
           <Container>
             <ThemeProvider theme={materialTheme}>
               <Routes />

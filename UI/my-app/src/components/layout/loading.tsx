@@ -11,7 +11,7 @@ export const Loading: FunctionComponent = () => {
 
   return (
     <Backdrop className="loading" open={open} onClick={handleClose}>
-      <CircularProgress color="inherit" />
+      <CircularProgress color="primary" />
     </Backdrop>
   );
 };

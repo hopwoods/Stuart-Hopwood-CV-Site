@@ -2,7 +2,7 @@
 import { css } from "@emotion/react";
 
 export const style = css`
-  grid-column: 1 / span 1;
+  grid-column: 2 / span 1;
   padding: 1em;
   display: grid;
   grid-template-columns: 30vw;
@@ -13,5 +13,3 @@ export const style = css`
   justify-self: center;
   justify-items: center;
 `;
-
-export const profilePicture = css``;
